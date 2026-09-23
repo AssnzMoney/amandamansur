@@ -781,17 +781,18 @@ section:nth-of-type(even) .btn-primary {
         display: flex;
         flex-direction: column;
     }
-    .hero-banner-wrapper {
-        max-width: 100%;
-        order: 1;
-        margin-top: 0;
-    }
     .hero-card {
-        order: 2;
-        margin-top: 20px;
+        order: 1;
+        margin-top: 0px;
         margin-bottom: 10px;
     }
     .hero .btn-primary {
+        order: 2;
+        margin-top: 0;
+        margin-bottom: 30px;
+    }
+    .hero-banner-wrapper {
+        max-width: 100%;
         order: 3;
         margin-top: 0;
     }
