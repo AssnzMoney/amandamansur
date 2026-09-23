@@ -258,8 +258,8 @@ p {
 
 .main-logo-centered {
     display: block;
-    margin: 0 auto 40px auto;
-    height: 90px;
+    margin: 0 auto 25px auto;
+    height: 80px;
     width: auto;
     filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.5));
 }
@@ -299,7 +299,7 @@ section:nth-of-type(even) {
 
 /* Hero */
 .hero {
-    padding-top: 140px;
+    padding-top: 85px;
     text-align: center;
     position: relative;
 }
@@ -349,6 +349,11 @@ section:nth-of-type(even) {
     font-weight: 300;
     line-height: 1.6;
     text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.hero-card p:last-child,
+.hero-card > p:last-of-type {
+    margin-bottom: 0;
 }
 
 .highlight {
@@ -783,6 +788,16 @@ section:nth-of-type(even) {
         align-items: center;
         gap: 10px;
     }
+    .navbar {
+        padding: 10px 15px;
+    }
+    .hero {
+        padding-top: 50px;
+    }
+    .main-logo-centered {
+        height: 65px;
+        margin: 0 auto 15px auto;
+    }
     .hero .container {
         display: flex;
         flex-direction: column;
@@ -790,26 +805,28 @@ section:nth-of-type(even) {
     .hero-card {
         order: 1;
         margin-top: 0px;
-        margin-bottom: 20px;
+        margin-bottom: 12px;
+        padding: 18px 16px;
     }
     .hero-banner-wrapper {
         max-width: 100%;
         order: 2;
-        margin-bottom: -40px;
+        margin-top: -10px;
+        margin-bottom: -35px;
         position: relative;
         z-index: 1;
     }
     .hero .btn-primary {
         order: 3;
         margin-top: 0;
-        margin-bottom: 30px;
+        margin-bottom: 25px;
         position: relative;
         z-index: 2;
     }
     .hero-card.mobile-only {
         display: block;
         order: 4;
-        margin-bottom: 40px;
+        margin-bottom: 35px;
     }
     .desktop-only {
         display: none !important;
