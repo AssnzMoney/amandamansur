@@ -481,6 +481,16 @@ section:nth-of-type(even) {
     text-shadow: 0 1px 3px rgba(0,0,0,0.5);
 }
 
+.hero-card p.hero-featured-text {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    color: var(--gold);
+    line-height: 1.5;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
 .hero-card p:last-child,
 .hero-card > p:last-of-type {
     margin-bottom: 0;
