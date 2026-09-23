@@ -546,6 +546,7 @@ section:nth-of-type(even) .accordion-header h4 {
 .price-card {
     position: relative;
     padding: 40px;
+    text-align: center;
 }
 
 .price-card h3 {
@@ -574,6 +575,9 @@ section:nth-of-type(even) .accordion-header h4 {
 
 .price-card ul {
     list-style: none;
+    text-align: left;
+    display: inline-block;
+    margin: 0 auto;
 }
 
 .price-card ul li {
