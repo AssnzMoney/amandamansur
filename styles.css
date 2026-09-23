@@ -72,8 +72,10 @@ body::before {
 /* Typography */
 h1, h2, h3, h4 {
     font-family: var(--font-heading);
-    color: var(--champagne);
-    font-weight: 700;
+    color: var(--gold);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 h1 {
@@ -86,17 +88,19 @@ h1 {
 }
 
 h2 {
-    font-size: 2.3rem;
+    font-size: 2rem;
     margin-bottom: 30px;
     text-align: center;
-    line-height: 1.3;
-    color: var(--champagne);
+    line-height: 1.4;
+    color: var(--gold);
 }
 
 p {
     margin-bottom: 15px;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     color: var(--text-muted);
+    font-weight: 300;
+    line-height: 1.7;
 }
 
 /* Glassmorphism */
@@ -353,10 +357,10 @@ section:nth-of-type(even) .btn-primary {
 
 .hero-card p {
     color: var(--champagne);
-    font-family: var(--font-heading);
-    font-size: 1.45rem;
+    font-size: 1.1rem;
+    font-weight: 300;
     line-height: 1.6;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
 }
 
 .highlight {
@@ -764,8 +768,14 @@ section:nth-of-type(even) .btn-primary {
 
 /* Responsive */
 @media (max-width: 768px) {
-    h1 { font-size: 2.5rem; }
-    h2 { font-size: 1.8rem; }
+    .container {
+        padding: 0 15px;
+    }
+    .glassmorphism {
+        padding: 20px 15px;
+    }
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.6rem; }
     .content-grid, .solution-grid, .about-content, .pricing-cards {
         grid-template-columns: 1fr;
     }
