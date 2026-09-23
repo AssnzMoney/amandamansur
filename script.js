@@ -20,13 +20,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Scroll Effects: Progress Bar & Smart Navbar Auto-Hide
+    // Scroll Effects: Progress Bar & Delicate Smart Navbar Auto-Hide
     const navbar = document.querySelector('.navbar');
     const scrollProgressBar = document.getElementById('scroll-progress');
     let lastScrollY = window.pageYOffset;
-    const scrollThreshold = 10;
+    let ticking = false;
+    const scrollThreshold = 15;
 
-    window.addEventListener('scroll', () => {
+    function handleScroll() {
         const currentScrollY = window.pageYOffset;
 
         // 1. Update Scroll Progress Bar
@@ -36,20 +37,29 @@ document.addEventListener('DOMContentLoaded', () => {
             scrollProgressBar.style.width = `${Math.min(100, Math.max(0, scrolled))}%`;
         }
 
-        // 2. Smart Navbar: Hide on scroll down, show on scroll up
+        // 2. Smart Navbar: Hide gently on scroll down, show on scroll up
         if (navbar) {
-            if (currentScrollY <= 25) {
+            if (currentScrollY <= 60) {
+                // Near top: always softly visible
                 navbar.classList.remove('navbar-hidden');
             } else if (currentScrollY > lastScrollY + scrollThreshold) {
-                // Scrolling down -> hide navbar
+                // Scrolling down -> fade out delicately
                 navbar.classList.add('navbar-hidden');
             } else if (currentScrollY < lastScrollY - scrollThreshold) {
-                // Scrolling up -> show navbar
+                // Scrolling up -> fade in delicately
                 navbar.classList.remove('navbar-hidden');
             }
         }
 
         lastScrollY = currentScrollY <= 0 ? 0 : currentScrollY;
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            window.requestAnimationFrame(handleScroll);
+            ticking = true;
+        }
     }, { passive: true });
 
     // Intersection Observer for scroll animations
