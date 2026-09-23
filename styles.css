@@ -116,9 +116,7 @@ p {
     color: var(--text-muted);
     font-weight: 300;
     line-height: 1.7;
-    text-align: justify;
-    hyphens: auto;
-    -webkit-hyphens: auto;
+    text-align: center;
 }
 
 /* Glassmorphism */
