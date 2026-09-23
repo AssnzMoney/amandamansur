@@ -169,4 +169,95 @@ document.addEventListener('DOMContentLoaded', () => {
         
         animate();
     }
+
+    // Testimonials Lightbox Modal
+    const lightbox = document.getElementById('testimonial-lightbox');
+    if (lightbox) {
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxClose = document.getElementById('lightbox-close-btn');
+        const lightboxOverlay = lightbox.querySelector('.lightbox-overlay');
+        const lightboxPrev = document.getElementById('lightbox-prev-btn');
+        const lightboxNext = document.getElementById('lightbox-next-btn');
+        const lightboxCurrent = document.getElementById('lightbox-current');
+        
+        const cards = Array.from(document.querySelectorAll('.testimonial-card'));
+        let currentIndex = 0;
+
+        function showImage(index) {
+            if (cards.length === 0) return;
+            if (index < 0) index = cards.length - 1;
+            if (index >= cards.length) index = 0;
+            currentIndex = index;
+
+            const card = cards[currentIndex];
+            const img = card.querySelector('.testimonial-img');
+            if (img && lightboxImg) {
+                lightboxImg.src = img.src;
+                lightboxImg.alt = img.alt || `Depoimento ${currentIndex + 1}`;
+            }
+            if (lightboxCurrent) {
+                lightboxCurrent.textContent = currentIndex + 1;
+            }
+        }
+
+        function openLightbox(index) {
+            showImage(index);
+            lightbox.classList.add('active');
+            lightbox.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            lightbox.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+        }
+
+        cards.forEach((card, idx) => {
+            card.addEventListener('click', () => {
+                openLightbox(idx);
+            });
+        });
+
+        if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+        if (lightboxOverlay) lightboxOverlay.addEventListener('click', closeLightbox);
+
+        if (lightboxPrev) {
+            lightboxPrev.addEventListener('click', (e) => {
+                e.stopPropagation();
+                showImage(currentIndex - 1);
+            });
+        }
+
+        if (lightboxNext) {
+            lightboxNext.addEventListener('click', (e) => {
+                e.stopPropagation();
+                showImage(currentIndex + 1);
+            });
+        }
+
+        // Keyboard navigation (ESC, ArrowLeft, ArrowRight)
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') showImage(currentIndex - 1);
+            if (e.key === 'ArrowRight') showImage(currentIndex + 1);
+        });
+
+        // Touch swipe support on mobile devices
+        let touchStartX = 0;
+        let touchEndX = 0;
+        lightbox.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+        
+        lightbox.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            if (touchStartX - touchEndX > 50) {
+                showImage(currentIndex + 1); // Swipe left -> next
+            } else if (touchEndX - touchStartX > 50) {
+                showImage(currentIndex - 1); // Swipe right -> prev
+            }
+        }, { passive: true });
+    }
 });
