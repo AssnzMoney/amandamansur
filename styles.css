@@ -29,6 +29,7 @@
 
 html {
     scroll-behavior: smooth;
+    font-size: 14px;
 }
 
 body {
@@ -282,42 +283,9 @@ section {
 }
 
 section:nth-of-type(even) {
-    color: var(--bg-dark);
-    position: relative; /* to cover particles */
+    position: relative;
     z-index: 1;
-    padding: 140px 0; /* Increased padding for a smoother, longer gradient area */
-    background: linear-gradient(
-        to bottom, 
-        rgba(221, 195, 165, 0) 0%, 
-        #DDC3A5 140px, 
-        #DDC3A5 100%
-    );
-}
-
-section:nth-of-type(even) h2,
-section:nth-of-type(even) h3,
-section:nth-of-type(even) h4,
-section:nth-of-type(even) .subtitle,
-section:nth-of-type(even) p,
-section:nth-of-type(even) li,
-section:nth-of-type(even) .bold-text,
-section:nth-of-type(even) .italic-text,
-section:nth-of-type(even) .quote {
-    color: var(--bg-dark);
-}
-
-section:nth-of-type(even) .glassmorphism {
-    background: rgba(255, 255, 255, 0.6);
-    border: 1px solid rgba(217, 164, 65, 0.4);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-}
-
-section:nth-of-type(even) .glassmorphism p {
-    color: var(--bg-dark);
-}
-
-section:nth-of-type(even) .accordion-header h4 {
-    color: var(--bg-dark);
+    background: radial-gradient(ellipse at center, rgba(185, 84, 47, 0.08) 0%, transparent 60%);
 }
 
 /* Hero */
