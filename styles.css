@@ -784,17 +784,21 @@ section:nth-of-type(even) .btn-primary {
     .hero-card {
         order: 1;
         margin-top: 0px;
-        margin-bottom: 10px;
-    }
-    .hero .btn-primary {
-        order: 2;
-        margin-top: 0;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
     }
     .hero-banner-wrapper {
         max-width: 100%;
+        order: 2;
+        margin-bottom: -40px;
+        position: relative;
+        z-index: 1;
+    }
+    .hero .btn-primary {
         order: 3;
         margin-top: 0;
+        margin-bottom: 30px;
+        position: relative;
+        z-index: 2;
     }
     .nav-links {
         display: none;
