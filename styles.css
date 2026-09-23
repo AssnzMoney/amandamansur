@@ -517,7 +517,8 @@ section:nth-of-type(even) {
 
 /* Section Badge */
 .section-badge {
-    display: inline-block;
+    display: table;
+    margin: 0 auto 16px auto;
     padding: 6px 18px;
     font-size: 0.8rem;
     font-weight: 700;
@@ -526,7 +527,6 @@ section:nth-of-type(even) {
     background: rgba(217, 164, 65, 0.12);
     border: 1px solid rgba(217, 164, 65, 0.35);
     border-radius: 30px;
-    margin-bottom: 16px;
     text-transform: uppercase;
     white-space: nowrap;
 }
