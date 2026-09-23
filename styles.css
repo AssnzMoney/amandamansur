@@ -290,8 +290,7 @@ section:nth-of-type(even) {
         to bottom, 
         rgba(221, 195, 165, 0) 0%, 
         #DDC3A5 140px, 
-        #DDC3A5 calc(100% - 140px), 
-        rgba(221, 195, 165, 0) 100%
+        #DDC3A5 100%
     );
 }
 
