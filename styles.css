@@ -94,7 +94,7 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-    font-size: 3.8rem;
+    font-size: 3.2rem;
     margin-bottom: 12px;
     background: linear-gradient(135deg, #FFFFFF 0%, var(--champagne) 40%, var(--gold) 100%);
     -webkit-background-clip: text;
@@ -103,8 +103,8 @@ h1 {
 }
 
 h2 {
-    font-size: 2rem;
-    margin-bottom: 30px;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
     text-align: center;
     line-height: 1.4;
     color: var(--gold);
@@ -112,7 +112,7 @@ h2 {
 
 p {
     margin-bottom: 15px;
-    font-size: 1.05rem;
+    font-size: 1rem;
     color: var(--text-muted);
     font-weight: 300;
     line-height: 1.7;
@@ -126,7 +126,7 @@ p {
     -webkit-backdrop-filter: blur(14px);
     border: 1px solid var(--glass-border);
     border-radius: 20px;
-    padding: 38px;
+    padding: 30px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), inset 0 1px 0 var(--glass-highlight);
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
@@ -140,10 +140,10 @@ p {
 /* Buttons */
 .btn-primary, .btn-secondary {
     display: block;
-    padding: 18px 40px;
+    padding: 15px 35px;
     border-radius: 50px;
     font-weight: 700;
-    font-size: 1.15rem;
+    font-size: 1rem;
     text-decoration: none;
     text-align: center;
     transition: all 0.3s ease;
@@ -152,8 +152,8 @@ p {
     text-transform: uppercase;
     letter-spacing: 1px;
     width: 100%;
-    max-width: 500px;
-    margin: 30px auto;
+    max-width: 450px;
+    margin: 25px auto;
     position: relative;
     overflow: hidden;
 }
@@ -278,7 +278,7 @@ p {
 
 /* Sections */
 section {
-    padding: 90px 0;
+    padding: 60px 0;
 }
 
 section:nth-of-type(even) {
@@ -539,27 +539,27 @@ section:nth-of-type(even) .accordion-header h4 {
 .pricing-cards {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    margin-top: 50px;
+    gap: 30px;
+    margin-top: 40px;
 }
 
 .price-card {
     position: relative;
-    padding: 40px;
+    padding: 30px;
     text-align: center;
 }
 
 .price-card h3 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     margin-bottom: 10px;
     color: var(--champagne);
 }
 
 .price {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 700;
     color: var(--gold);
-    margin: 20px 0 5px 0;
+    margin: 15px 0 5px 0;
 }
 
 .price span {
