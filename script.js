@@ -195,11 +195,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 const cardWidth = targetCard.offsetWidth;
                 const cardLeft = targetCard.offsetLeft;
                 const targetScroll = cardLeft - (carouselWidth / 2) + (cardWidth / 2);
-
-                carousel.scrollTo({
-                    left: Math.max(0, targetScroll),
-                    behavior: 'smooth'
-                });
+                // Use simple assignment instead of scrollTo to prevent iOS Safari from freezing
+                carousel.scrollLeft = Math.max(0, targetScroll);
             }
 
             if (carouselActiveIdx) {
@@ -272,13 +269,13 @@ document.addEventListener('DOMContentLoaded', () => {
             showImage(index);
             lightbox.classList.add('active');
             lightbox.setAttribute('aria-hidden', 'false');
-            document.body.style.overflow = 'hidden';
+            // Remove overflow hidden to prevent Safari iOS scroll freeze bug
         }
 
         function closeLightbox() {
             lightbox.classList.remove('active');
             lightbox.setAttribute('aria-hidden', 'true');
-            document.body.style.overflow = '';
+            // Remove overflow hidden to prevent Safari iOS scroll freeze bug
         }
 
         cards.forEach((card, idx) => {
