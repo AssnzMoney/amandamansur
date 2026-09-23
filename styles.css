@@ -483,12 +483,11 @@ section:nth-of-type(even) {
 
 .hero-card p.hero-featured-text {
     font-family: var(--font-heading);
-    font-size: 1.3rem;
-    color: var(--gold);
+    font-size: 1.25rem;
+    color: var(--gold-light);
     line-height: 1.5;
-    text-transform: uppercase;
-    font-weight: 600;
-    letter-spacing: 1px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
 }
 
 .hero-card p:last-child,
