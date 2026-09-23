@@ -910,19 +910,26 @@ section:nth-of-type(even) {
 }
 
 .lightbox-img-container {
+    max-width: 100%;
     max-height: 82vh;
     border-radius: 16px;
     overflow: hidden;
     background: #FFFFFF;
     box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85), 0 0 35px rgba(217, 164, 65, 0.25);
     border: 1px solid rgba(217, 164, 65, 0.35);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.lightbox-img {
-    max-width: 85vw;
+#lightbox-img {
+    max-width: 100%;
     max-height: 80vh;
+    width: auto;
+    height: auto;
     object-fit: contain;
     display: block;
+    margin: 0 auto;
 }
 
 .lightbox-close {
