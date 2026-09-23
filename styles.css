@@ -532,6 +532,7 @@ section:nth-of-type(even) {
     border-radius: 30px;
     margin-bottom: 16px;
     text-transform: uppercase;
+    white-space: nowrap;
 }
 
 .testimonials-subtitle {
@@ -1734,6 +1735,11 @@ section:nth-of-type(even) {
     .navbar {
         padding: 10px 15px;
         justify-content: flex-end;
+    }
+    .section-badge {
+        font-size: 0.7rem;
+        padding: 4px 12px;
+        letter-spacing: 1px;
     }
     .footer-socials {
         gap: 10px;
