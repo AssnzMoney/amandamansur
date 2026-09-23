@@ -323,14 +323,14 @@ section:nth-of-type(even) {
 
 /* Ambiências Sutis e Elegantes por Seção */
 
-/* 1. Seção O Clube - Ambiência Aveludada Terracota & Café */
+/* 1. Seção O Clube - Ambiência Verde Esmeralda & Vitalidade */
 #o-clube {
     position: relative;
     background: linear-gradient(180deg, 
         rgba(33, 23, 19, 0) 0%, 
-        rgba(109, 57, 40, 0.22) 25%, 
-        rgba(185, 84, 47, 0.16) 50%, 
-        rgba(109, 57, 40, 0.22) 75%, 
+        rgba(6, 78, 59, 0.45) 25%, 
+        rgba(4, 47, 46, 0.6) 50%, 
+        rgba(6, 78, 59, 0.45) 75%, 
         rgba(33, 23, 19, 0) 100%
     );
     overflow: hidden;
@@ -344,7 +344,7 @@ section:nth-of-type(even) {
     transform: translate(-50%, -50%);
     width: 85%;
     height: 70%;
-    background: radial-gradient(ellipse at center, rgba(231, 160, 107, 0.1) 0%, transparent 65%);
+    background: radial-gradient(ellipse at center, rgba(16, 185, 129, 0.16) 0%, rgba(6, 78, 59, 0.1) 45%, transparent 70%);
     pointer-events: none;
     z-index: 0;
 }
@@ -354,14 +354,14 @@ section:nth-of-type(even) {
     z-index: 1;
 }
 
-/* 2. Seção Sobre a Criadora - Ambiência Calorosa & Café Profundo */
+/* 2. Seção Sobre a Criadora - Ambiência Esmeralda & Conexão */
 #criadora {
     position: relative;
     background: linear-gradient(180deg, 
         rgba(33, 23, 19, 0) 0%, 
-        rgba(65, 42, 33, 0.55) 20%, 
-        rgba(109, 57, 40, 0.3) 50%, 
-        rgba(65, 42, 33, 0.55) 80%, 
+        rgba(6, 78, 59, 0.4) 20%, 
+        rgba(15, 60, 48, 0.65) 50%, 
+        rgba(6, 78, 59, 0.4) 80%, 
         rgba(33, 23, 19, 0) 100%
     );
     overflow: hidden;
@@ -371,11 +371,11 @@ section:nth-of-type(even) {
     content: '';
     position: absolute;
     top: 50%;
-    left: 25%;
+    left: 30%;
     transform: translateY(-50%);
-    width: 480px;
-    height: 480px;
-    background: radial-gradient(circle, rgba(231, 160, 107, 0.12) 0%, transparent 65%);
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.18) 0%, rgba(5, 150, 105, 0.08) 40%, transparent 65%);
     pointer-events: none;
     z-index: 0;
 }
@@ -385,14 +385,14 @@ section:nth-of-type(even) {
     z-index: 1;
 }
 
-/* 3. Seção Planos & Oferta - Ambiência Ouro & Café Nobre */
+/* 3. Seção Planos & Oferta - Fusão Esmeralda Nobre & Ouro */
 #planos {
     position: relative;
     background: linear-gradient(180deg, 
         rgba(33, 23, 19, 0) 0%, 
-        rgba(48, 30, 24, 0.8) 20%, 
-        rgba(65, 42, 33, 0.88) 50%, 
-        rgba(48, 30, 24, 0.8) 80%, 
+        rgba(6, 78, 59, 0.55) 20%, 
+        rgba(10, 45, 36, 0.85) 50%, 
+        rgba(6, 78, 59, 0.55) 80%, 
         rgba(33, 23, 19, 0) 100%
     );
     overflow: hidden;
@@ -406,7 +406,7 @@ section:nth-of-type(even) {
     transform: translate(-50%, -50%);
     width: 90%;
     height: 75%;
-    background: radial-gradient(ellipse at center, rgba(217, 164, 65, 0.12) 0%, rgba(109, 57, 40, 0.08) 45%, transparent 70%);
+    background: radial-gradient(ellipse at center, rgba(16, 185, 129, 0.22) 0%, rgba(217, 164, 65, 0.12) 40%, transparent 70%);
     pointer-events: none;
     z-index: 0;
 }
