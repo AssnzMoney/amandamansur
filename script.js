@@ -170,6 +170,74 @@ document.addEventListener('DOMContentLoaded', () => {
         animate();
     }
 
+    // Testimonials Horizontal Carousel Slider
+    const carousel = document.getElementById('testimonials-carousel');
+    const carouselArrowPrev = document.getElementById('carousel-arrow-prev');
+    const carouselArrowNext = document.getElementById('carousel-arrow-next');
+    const carouselBtnPrev = document.getElementById('carousel-btn-prev');
+    const carouselBtnNext = document.getElementById('carousel-btn-next');
+    const carouselActiveIdx = document.getElementById('carousel-active-idx');
+
+    if (carousel) {
+        const cards = Array.from(carousel.querySelectorAll('.testimonial-card'));
+        const totalCards = cards.length;
+        let currentIdx = 0;
+
+        function scrollToCard(index) {
+            if (totalCards === 0) return;
+            if (index < 0) index = totalCards - 1;
+            if (index >= totalCards) index = 0;
+            currentIdx = index;
+
+            const targetCard = cards[currentIdx];
+            if (targetCard) {
+                const carouselWidth = carousel.clientWidth;
+                const cardWidth = targetCard.offsetWidth;
+                const cardLeft = targetCard.offsetLeft;
+                const targetScroll = cardLeft - (carouselWidth / 2) + (cardWidth / 2);
+
+                carousel.scrollTo({
+                    left: Math.max(0, targetScroll),
+                    behavior: 'smooth'
+                });
+            }
+
+            if (carouselActiveIdx) {
+                carouselActiveIdx.textContent = currentIdx + 1;
+            }
+        }
+
+        if (carouselArrowNext) carouselArrowNext.addEventListener('click', () => scrollToCard(currentIdx + 1));
+        if (carouselArrowPrev) carouselArrowPrev.addEventListener('click', () => scrollToCard(currentIdx - 1));
+        if (carouselBtnNext) carouselBtnNext.addEventListener('click', () => scrollToCard(currentIdx + 1));
+        if (carouselBtnPrev) carouselBtnPrev.addEventListener('click', () => scrollToCard(currentIdx - 1));
+
+        // Update active index indicator during touch scroll
+        let isScrollingTimeout;
+        carousel.addEventListener('scroll', () => {
+            clearTimeout(isScrollingTimeout);
+            isScrollingTimeout = setTimeout(() => {
+                const carouselCenter = carousel.scrollLeft + (carousel.clientWidth / 2);
+                let closestIdx = 0;
+                let minDistance = Infinity;
+
+                cards.forEach((card, idx) => {
+                    const cardCenter = card.offsetLeft + (card.offsetWidth / 2);
+                    const dist = Math.abs(carouselCenter - cardCenter);
+                    if (dist < minDistance) {
+                        minDistance = dist;
+                        closestIdx = idx;
+                    }
+                });
+
+                currentIdx = closestIdx;
+                if (carouselActiveIdx) {
+                    carouselActiveIdx.textContent = currentIdx + 1;
+                }
+            }, 60);
+        }, { passive: true });
+    }
+
     // Testimonials Lightbox Modal
     const lightbox = document.getElementById('testimonial-lightbox');
     if (lightbox) {
