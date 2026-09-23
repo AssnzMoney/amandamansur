@@ -525,6 +525,13 @@ section:nth-of-type(even) {
     color: var(--peach);
 }
 
+.about-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
 .creator-img {
     width: 100%;
     max-width: 400px;
@@ -535,7 +542,52 @@ section:nth-of-type(even) {
     display: block;
     margin: 0 auto;
     object-fit: cover;
-    aspect-ratio: 1; /* Mantém a proporção quadrada se desejar, ou pode remover se quiser retangular */
+    aspect-ratio: 1;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.creator-img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6), 0 0 30px rgba(217, 164, 65, 0.3);
+}
+
+.creator-details {
+    margin-top: 18px;
+    text-align: center;
+}
+
+.creator-name {
+    font-family: var(--font-heading);
+    font-size: 1.7rem;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, #FFFFFF 0%, var(--champagne) 40%, var(--gold) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 6px;
+    filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.5));
+}
+
+.creator-title {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--peach);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.95;
+}
+
+.creator-title::before,
+.creator-title::after {
+    content: '✦';
+    color: var(--gold);
+    font-size: 0.75rem;
 }
 
 /* Pricing */
