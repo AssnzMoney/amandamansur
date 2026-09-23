@@ -204,11 +204,26 @@ p {
     box-shadow: 0 12px 40px rgba(16, 185, 129, 0.8);
 }
 
+/* Scroll Progress Bar */
+#scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 0%;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--peach));
+    z-index: 1002;
+    transition: width 0.1s ease-out;
+    box-shadow: 0 0 10px rgba(217, 164, 65, 0.8);
+    pointer-events: none;
+}
+
 /* Language Flags */
 .lang-flags {
     display: flex;
     gap: 15px;
     align-items: center;
+    margin-left: auto;
 }
 
 .flag-link {
@@ -236,17 +251,24 @@ p {
 /* Navbar */
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     padding: 16px 5%;
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(33, 23, 19, 0.7);
+    background: rgba(33, 23, 19, 0.75);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
     border-bottom: 1px solid rgba(217, 164, 65, 0.15);
     z-index: 1000;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease;
+}
+
+.navbar.navbar-hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
 }
 
 .logo-img {
@@ -705,6 +727,49 @@ section:nth-of-type(even) {
     color: var(--text-muted);
 }
 
+/* Social Links */
+.footer-socials {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    margin: 35px 0 25px 0;
+    flex-wrap: wrap;
+}
+
+.social-icon-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border-radius: 50px;
+    background: rgba(246, 228, 197, 0.05);
+    border: 1px solid rgba(217, 164, 65, 0.25);
+    color: var(--champagne);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    backdrop-filter: blur(10px);
+}
+
+.social-icon-link svg {
+    width: 18px;
+    height: 18px;
+    transition: transform 0.3s ease;
+}
+
+.social-icon-link:hover {
+    background: rgba(217, 164, 65, 0.18);
+    border-color: var(--gold);
+    color: #FFFFFF;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(217, 164, 65, 0.25);
+}
+
+.social-icon-link:hover svg {
+    transform: scale(1.15);
+}
+
 /* Animations */
 @keyframes fadeUpAnim {
     from {
@@ -735,13 +800,50 @@ section:nth-of-type(even) {
 
 .reveal {
     opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease-out;
+    transform: translateY(35px);
+    transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
 }
 
 .reveal.active {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Scroll reveal card entrance */
+.reveal .card,
+.reveal .price-card,
+.reveal .include-item,
+.reveal .text-block,
+.reveal .callout,
+.reveal .accordion-item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.active .card,
+.reveal.active .price-card,
+.reveal.active .include-item,
+.reveal.active .text-block,
+.reveal.active .callout,
+.reveal.active .accordion-item {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal.active .card:nth-child(2),
+.reveal.active .include-item:nth-child(2),
+.reveal.active .price-card:nth-child(2) {
+    transition-delay: 0.12s;
+}
+
+.reveal.active .include-item:nth-child(3) {
+    transition-delay: 0.22s;
+}
+
+.reveal.active .include-item:nth-child(4) {
+    transition-delay: 0.32s;
 }
 
 @keyframes pulse {
@@ -790,6 +892,10 @@ section:nth-of-type(even) {
     }
     .navbar {
         padding: 10px 15px;
+        justify-content: flex-end;
+    }
+    .footer-socials {
+        gap: 10px;
     }
     .hero {
         padding-top: 50px;

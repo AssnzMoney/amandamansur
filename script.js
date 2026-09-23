@@ -20,6 +20,38 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Scroll Effects: Progress Bar & Smart Navbar Auto-Hide
+    const navbar = document.querySelector('.navbar');
+    const scrollProgressBar = document.getElementById('scroll-progress');
+    let lastScrollY = window.pageYOffset;
+    const scrollThreshold = 10;
+
+    window.addEventListener('scroll', () => {
+        const currentScrollY = window.pageYOffset;
+
+        // 1. Update Scroll Progress Bar
+        if (scrollProgressBar) {
+            const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = docHeight > 0 ? (currentScrollY / docHeight) * 100 : 0;
+            scrollProgressBar.style.width = `${Math.min(100, Math.max(0, scrolled))}%`;
+        }
+
+        // 2. Smart Navbar: Hide on scroll down, show on scroll up
+        if (navbar) {
+            if (currentScrollY <= 25) {
+                navbar.classList.remove('navbar-hidden');
+            } else if (currentScrollY > lastScrollY + scrollThreshold) {
+                // Scrolling down -> hide navbar
+                navbar.classList.add('navbar-hidden');
+            } else if (currentScrollY < lastScrollY - scrollThreshold) {
+                // Scrolling up -> show navbar
+                navbar.classList.remove('navbar-hidden');
+            }
+        }
+
+        lastScrollY = currentScrollY <= 0 ? 0 : currentScrollY;
+    }, { passive: true });
+
     // Intersection Observer for scroll animations
     const revealElements = document.querySelectorAll('.reveal');
     
