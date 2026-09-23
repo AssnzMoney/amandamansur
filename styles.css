@@ -582,7 +582,6 @@ section:nth-of-type(even) {
     max-width: 100%;
     overflow-x: auto;
     overflow-y: hidden;
-    scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
     overscroll-behavior-x: contain;
@@ -611,7 +610,6 @@ section:nth-of-type(even) {
     flex: 0 0 280px;
     width: 280px;
     max-width: 280px;
-    scroll-snap-align: center;
     padding: 14px 14px 12px 14px;
     border-radius: 20px;
     background: var(--glass-bg);
