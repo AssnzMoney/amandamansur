@@ -744,6 +744,10 @@ section:nth-of-type(even) {
     animation: pulse 2.5s infinite;
 }
 
+.mobile-only {
+    display: none;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .container {
@@ -787,6 +791,14 @@ section:nth-of-type(even) {
         margin-bottom: 30px;
         position: relative;
         z-index: 2;
+    }
+    .hero-card.mobile-only {
+        display: block;
+        order: 4;
+        margin-bottom: 40px;
+    }
+    .desktop-only {
+        display: none !important;
     }
     .nav-links {
         display: none;
