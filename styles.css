@@ -2383,3 +2383,46 @@ body, html {
         display: inline-block !important;
     }
 }
+
+/* =========================================
+   MOBILE FIXES FOR GUARANTEE AND CAROUSEL
+   ========================================= */
+@media (max-width: 768px) {
+    /* Consertando a seo de Garantia torta */
+    .guarantee-info-col {
+        text-align: center !important;
+    }
+    .guarantee-info-col h2, .guarantee-info-col p {
+        text-align: center !important;
+    }
+    .guarantee-pill {
+        display: inline-block !important;
+        margin: 20px auto !important;
+    }
+    .guarantee-quote {
+        border-left: none !important; /* Tira a linha solta na lateral */
+        padding-left: 0 !important;
+        text-align: center !important;
+    }
+
+    /* Restaurando botes do carrossel S NO MOBILE */
+    #carousel-btn-prev, #carousel-btn-next {
+        display: inline-flex !important;
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: #fff;
+        padding: 8px 16px;
+        border-radius: 4px;
+        margin: 0 10px;
+        font-family: 'Montserrat', sans-serif;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+    }
+    .carousel-controls {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+    }
+}
