@@ -1,23 +1,23 @@
-:root {
-    /* Paleta Oficial Essence Club */
-    --champagne: #F6E4C5;    /* 1. Champagne / Creme - Tipografia principal, textos claros */
-    --gold: #D9A441;         /* 2. Dourado - Detalhes decorativos, linhas e elementos de luxo */
-    --gold-light: #F7DFB0;   /* Dourado claro para brilhos e gradientes */
-    --gold-hover: #E7B85D;   /* Hover de botões */
-    --gold-dark: #AC7A24;    /* Sombra dourada profunda */
-    --terracotta: #B9542F;   /* 3. Terracota - Acentos quentes, conexão artística */
-    --bg-dark: #211713;      /* 4. Marrom Café Escuro - Base escura da composição */
-    --marrom-red: #6D3928;   /* 5. Marrom Avermelhado - Transição de profundidade */
-    --peach: #E7A06B;        /* 6. Pêssego / Luz Quente - Reflexos acolhedores e cinematográficos */
+﻿:root {
+    /* Paleta Minimalista High-End */
+    --champagne: #ffffff;
+    --gold: #ffffff;
+    --gold-light: #f0f0f0;
+    --gold-hover: #e0e0e0;
+    --gold-dark: #cccccc;
+    --terracotta: #555555;
+    --bg-dark: #0a0a0a;
+    --marrom-red: #1a1a1a;
+    --peach: #ffffff;
     
-    --text: #F6E4C5;
-    --text-muted: rgba(246, 228, 197, 0.78);
+    --text: #ffffff;
+    --text-muted: rgba(255, 255, 255, 0.7);
     
-    --glass-bg: rgba(33, 23, 19, 0.75);
-    --glass-border: rgba(217, 164, 65, 0.22);
-    --glass-highlight: rgba(246, 228, 197, 0.08);
+    --glass-bg: transparent;
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-highlight: transparent;
 
-    --font-heading: 'Playfair Display', serif;
+    --font-heading: 'Montserrat', 'Outfit', sans-serif;
     --font-body: 'Outfit', sans-serif;
 }
 
@@ -50,7 +50,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100vh;
-    background: radial-gradient(circle at 50% 12%, rgba(109, 57, 40, 0.45) 0%, rgba(33, 23, 19, 0.95) 60%, var(--bg-dark) 100%);
+    background: radial-gradient(circle at 50% 12%, rgba(109, 57, 40, 0.45) 0%, rgba(10, 10, 10, 0.95) 60%, var(--bg-dark) 100%);
     z-index: -1;
     pointer-events: none;
 }
@@ -90,7 +90,7 @@ strong {
 /* Typography */
 h1, h2, h3, h4 {
     font-family: var(--font-heading);
-    color: var(--gold);
+    color: #ffffff;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -124,20 +124,19 @@ p {
 
 /* Glassmorphism */
 .glassmorphism {
-    background: var(--glass-bg);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    border: 1px solid var(--glass-border);
-    border-radius: 20px;
-    padding: 30px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), inset 0 1px 0 var(--glass-highlight);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    background: rgba(255, 255, 255, 0.02) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border: none !important;
+    border-left: 2px solid #ffffff !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    text-align: left !important;
 }
 
 .glassmorphism:hover {
-    transform: translateY(-4px);
-    border-color: rgba(217, 164, 65, 0.45);
-    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.6), 0 0 15px rgba(217, 164, 65, 0.12);
+    
+    border-color: rgba(255, 255, 255, 0.3);
 }
 
 /* Buttons */
@@ -155,7 +154,7 @@ p {
     text-transform: uppercase;
     letter-spacing: 1px;
     width: 100%;
-    max-width: 450px;
+    max-width: 550px;
     margin: 25px auto;
     position: relative;
     overflow: hidden;
@@ -181,29 +180,32 @@ p {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, #10B981 0%, #059669 50%, #064E3B 100%);
-    color: #FFFFFF;
-    font-weight: 800;
-    box-shadow: 0 8px 30px rgba(16, 185, 129, 0.6);
+    background: #ffffff;
+    color: #000000;
+    font-weight: 700;
+    
+    border-radius: 0px;
 }
 
 .btn-primary:hover {
-    background: linear-gradient(135deg, #10B981 0%, #10B981 50%, #059669 100%);
-    transform: translateY(-2px);
-    box-shadow: 0 12px 40px rgba(16, 185, 129, 0.8);
+    background: #f0f0f0;
+    
+    
 }
 
 .btn-secondary {
-    background: linear-gradient(135deg, #10B981 0%, #059669 50%, #064E3B 100%); 
-    color: #FFFFFF;
-    font-weight: 800;
-    box-shadow: 0 8px 30px rgba(16, 185, 129, 0.6);
+    background: transparent;
+    color: #ffffff;
+    font-weight: 600;
+    border: 1px solid #ffffff;
+    
+    border-radius: 0px;
 }
 
 .btn-secondary:hover {
-    background: linear-gradient(135deg, #10B981 0%, #10B981 50%, #059669 100%);
-    transform: translateY(-2px);
-    box-shadow: 0 12px 40px rgba(16, 185, 129, 0.8);
+    background: #ffffff;
+    color: #000000;
+    
 }
 
 /* Scroll Progress Bar */
@@ -211,12 +213,12 @@ p {
     position: fixed;
     top: 0;
     left: 0;
-    height: 3px;
+    height: 1px;
     width: 0%;
     background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--peach));
     z-index: 1002;
     transition: width 0.1s ease-out;
-    box-shadow: 0 0 10px rgba(217, 164, 65, 0.8);
+    
     pointer-events: none;
 }
 
@@ -259,17 +261,17 @@ p {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(33, 23, 19, 0.75);
+    background: rgba(10, 10, 10, 0.90);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
-    border-bottom: 1px solid rgba(217, 164, 65, 0.15);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     z-index: 1000;
     transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1), visibility 0.55s ease;
     will-change: transform, opacity;
 }
 
 .navbar.navbar-hidden {
-    transform: translateY(-20px);
+    
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
@@ -338,11 +340,11 @@ section:nth-of-type(even) {
 #o-clube {
     position: relative;
     background: linear-gradient(180deg, 
-        rgba(33, 23, 19, 0) 0%, 
+        rgba(10, 10, 10, 0) 0%, 
         rgba(6, 78, 59, 0.45) 25%, 
         rgba(4, 47, 46, 0.6) 50%, 
         rgba(6, 78, 59, 0.45) 75%, 
-        rgba(33, 23, 19, 0) 100%
+        rgba(10, 10, 10, 0) 100%
     );
     overflow: hidden;
 }
@@ -369,11 +371,11 @@ section:nth-of-type(even) {
 #criadora {
     position: relative;
     background: linear-gradient(180deg, 
-        rgba(33, 23, 19, 0) 0%, 
+        rgba(10, 10, 10, 0) 0%, 
         rgba(6, 78, 59, 0.4) 20%, 
         rgba(15, 60, 48, 0.65) 50%, 
         rgba(6, 78, 59, 0.4) 80%, 
-        rgba(33, 23, 19, 0) 100%
+        rgba(10, 10, 10, 0) 100%
     );
     overflow: hidden;
 }
@@ -383,7 +385,7 @@ section:nth-of-type(even) {
     position: absolute;
     top: 50%;
     left: 30%;
-    transform: translateY(-50%);
+    
     width: 500px;
     height: 500px;
     background: radial-gradient(circle, rgba(16, 185, 129, 0.18) 0%, rgba(5, 150, 105, 0.08) 40%, transparent 65%);
@@ -400,11 +402,11 @@ section:nth-of-type(even) {
 #planos {
     position: relative;
     background: linear-gradient(180deg, 
-        rgba(33, 23, 19, 0) 0%, 
+        rgba(10, 10, 10, 0) 0%, 
         rgba(6, 78, 59, 0.55) 20%, 
         rgba(10, 45, 36, 0.85) 50%, 
         rgba(6, 78, 59, 0.55) 80%, 
-        rgba(33, 23, 19, 0) 100%
+        rgba(10, 10, 10, 0) 100%
     );
     overflow: hidden;
 }
@@ -630,9 +632,9 @@ section:nth-of-type(even) {
 }
 
 .testimonial-card:hover {
-    transform: translateY(-5px);
+    
     border-color: rgba(217, 164, 65, 0.55);
-    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6), 0 0 20px rgba(16, 185, 129, 0.15);
+    
 }
 
 .testimonial-header {
@@ -669,7 +671,7 @@ section:nth-of-type(even) {
     border-radius: 12px;
     overflow: hidden;
     background: #FFFFFF;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -708,14 +710,14 @@ section:nth-of-type(even) {
     z-index: 10;
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+    
 }
 
 .carousel-arrow:hover {
     background: var(--gold);
     color: #1A120B;
     transform: scale(1.1);
-    box-shadow: 0 8px 25px rgba(217, 164, 65, 0.4);
+    
 }
 
 .carousel-arrow-prev {
@@ -757,12 +759,12 @@ section:nth-of-type(even) {
 .carousel-nav-btn:hover {
     background: var(--gold);
     color: #1A120B;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(217, 164, 65, 0.35);
+    
+    
 }
 
 .carousel-nav-btn:active {
-    transform: translateY(0);
+    
 }
 
 .carousel-counter-pill {
@@ -805,7 +807,7 @@ section:nth-of-type(even) {
     align-items: center;
     gap: 5px;
     opacity: 0;
-    transform: translateY(6px);
+    
     transition: opacity 0.25s ease, transform 0.25s ease;
     pointer-events: none;
     z-index: 2;
@@ -813,7 +815,7 @@ section:nth-of-type(even) {
 
 .testimonial-card:hover .testimonial-zoom-hint {
     opacity: 1;
-    transform: translateY(0);
+    
 }
 
 /* Testimonials CTA Box */
@@ -822,11 +824,11 @@ section:nth-of-type(even) {
     padding: 45px 30px;
     text-align: center;
     border-radius: 24px;
-    background: linear-gradient(135deg, rgba(33, 23, 19, 0.95), rgba(10, 45, 36, 0.85));
+    background: linear-gradient(135deg, rgba(10, 10, 10, 0.95), rgba(10, 45, 36, 0.85));
     border: 1px solid rgba(217, 164, 65, 0.45);
     position: relative;
     overflow: hidden;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5), 0 0 25px rgba(217, 164, 65, 0.15);
+    
 }
 
 .cta-box-glow {
@@ -919,7 +921,7 @@ section:nth-of-type(even) {
     border-radius: 16px;
     overflow: hidden;
     background: #FFFFFF;
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85), 0 0 35px rgba(217, 164, 65, 0.25);
+    
     border: 1px solid rgba(217, 164, 65, 0.35);
     display: flex;
     justify-content: center;
@@ -963,7 +965,7 @@ section:nth-of-type(even) {
 .lightbox-nav {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
+    
     background: rgba(20, 16, 14, 0.75);
     border: 1px solid rgba(217, 164, 65, 0.4);
     color: var(--gold);
@@ -1102,6 +1104,7 @@ section:nth-of-type(even) {
     font-size: 1.4rem;
     color: var(--gold);
     margin-bottom: 30px;
+    margin-left: -15px;
 }
 
 .benefit-list {
@@ -1138,7 +1141,7 @@ section:nth-of-type(even) {
 .check-list p {
     font-size: 1.15rem;
     margin-bottom: 15px;
-    border-bottom: 1px solid rgba(217, 164, 65, 0.15);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     padding-bottom: 15px;
     color: var(--champagne);
 }
@@ -1203,7 +1206,7 @@ section:nth-of-type(even) {
     max-width: 400px;
     height: auto;
     border-radius: 20px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 20px rgba(217, 164, 65, 0.2);
+    
     border: 1px solid var(--glass-border);
     display: block;
     margin: 0 auto;
@@ -1214,7 +1217,7 @@ section:nth-of-type(even) {
 
 .creator-img:hover {
     transform: scale(1.02);
-    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6), 0 0 30px rgba(217, 164, 65, 0.3);
+    
 }
 
 .creator-details {
@@ -1292,6 +1295,7 @@ section:nth-of-type(even) {
 .price-card .subtitle {
     color: var(--peach);
     margin-bottom: 30px;
+    margin-left: -15px;
 }
 
 .price-card ul {
@@ -1317,10 +1321,10 @@ section:nth-of-type(even) {
 }
 
 .highlight-card {
-    background: linear-gradient(145deg, rgba(65, 42, 33, 0.95), rgba(33, 23, 19, 0.98));
+    background: linear-gradient(145deg, rgba(65, 42, 33, 0.95), rgba(10, 10, 10, 0.98));
     border: 2px solid var(--gold);
     border-radius: 20px;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 25px rgba(217, 164, 65, 0.15);
+    
     transform: scale(1.04);
 }
 
@@ -1334,7 +1338,7 @@ section:nth-of-type(even) {
     border-radius: 20px;
     font-weight: 700;
     font-size: 0.9rem;
-    box-shadow: 0 4px 15px rgba(217, 164, 65, 0.4);
+    
 }
 
 .strike {
@@ -1412,8 +1416,8 @@ section:nth-of-type(even) {
     padding: 48px 42px;
     border-radius: 28px;
     border: 1px solid rgba(217, 164, 65, 0.45);
-    background: linear-gradient(135deg, rgba(33, 23, 19, 0.95) 0%, rgba(10, 45, 36, 0.82) 100%);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55), 0 0 30px rgba(217, 164, 65, 0.15);
+    background: linear-gradient(135deg, rgba(10, 10, 10, 0.95) 0%, rgba(10, 45, 36, 0.82) 100%);
+    
     overflow: hidden;
     text-align: left;
 }
@@ -1423,7 +1427,7 @@ section:nth-of-type(even) {
     top: 50%;
     left: 15%;
     transform: translate(-50%, -50%);
-    width: 380px;
+    width: 550px;
     height: 380px;
     background: radial-gradient(circle, rgba(217, 164, 65, 0.22) 0%, rgba(16, 185, 129, 0.1) 45%, transparent 75%);
     pointer-events: none;
@@ -1452,13 +1456,13 @@ section:nth-of-type(even) {
     height: auto;
     display: block;
     border-radius: 50%;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.65), 0 0 25px rgba(217, 164, 65, 0.4);
+    
     transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease;
 }
 
 .guarantee-box:hover .guarantee-seal-img {
     transform: scale(1.06) rotate(2deg);
-    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.75), 0 0 35px rgba(217, 164, 65, 0.6);
+    
 }
 
 .guarantee-info-col {
@@ -1609,8 +1613,8 @@ section:nth-of-type(even) {
     background: rgba(217, 164, 65, 0.18);
     border-color: var(--gold);
     color: #FFFFFF;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(217, 164, 65, 0.25);
+    
+    
 }
 
 .social-icon-link:hover svg {
@@ -1621,11 +1625,11 @@ section:nth-of-type(even) {
 @keyframes fadeUpAnim {
     from {
         opacity: 0;
-        transform: translateY(25px);
+        
     }
     to {
         opacity: 1;
-        transform: translateY(0);
+        
     }
 }
 
@@ -1647,14 +1651,14 @@ section:nth-of-type(even) {
 
 .reveal {
     opacity: 0;
-    transform: translateY(35px);
+    
     transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
     will-change: opacity, transform;
 }
 
 .reveal.active {
     opacity: 1;
-    transform: translateY(0);
+    
 }
 
 /* Scroll reveal card entrance */
@@ -1665,7 +1669,7 @@ section:nth-of-type(even) {
 .reveal .callout,
 .reveal .accordion-item {
     opacity: 0;
-    transform: translateY(20px);
+    
     transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -1676,7 +1680,7 @@ section:nth-of-type(even) {
 .reveal.active .callout,
 .reveal.active .accordion-item {
     opacity: 1;
-    transform: translateY(0);
+    
 }
 
 .reveal.active .card:nth-child(2),
@@ -1696,15 +1700,15 @@ section:nth-of-type(even) {
 @keyframes pulse {
     0% { 
         transform: scale(1); 
-        box-shadow: 0 8px 30px rgba(16, 185, 129, 0.6), 0 0 0 0 rgba(16, 185, 129, 0.8);
+        
     }
     50% { 
         transform: scale(1.05); 
-        box-shadow: 0 12px 40px rgba(16, 185, 129, 0.8), 0 0 25px 15px rgba(16, 185, 129, 0);
+        
     }
     100% { 
         transform: scale(1); 
-        box-shadow: 0 8px 30px rgba(16, 185, 129, 0.6), 0 0 0 0 rgba(16, 185, 129, 0);
+        
     }
 }
 
@@ -1722,8 +1726,15 @@ section:nth-of-type(even) {
         padding: 0 15px;
     }
     .glassmorphism {
-        padding: 20px 15px;
-    }
+    background: rgba(255, 255, 255, 0.02) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border: none !important;
+    border-left: 2px solid #ffffff !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    text-align: left !important;
+}
     h1 { font-size: 2.2rem; }
     h2 { font-size: 1.6rem; }
     .content-grid, .solution-grid, .about-content, .pricing-cards, .testimonials-grid {
@@ -1792,4 +1803,541 @@ section:nth-of-type(even) {
     .nav-links {
         display: none;
     }
+}
+
+/* Minimalist Additions */
+.minimalist-hero .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    text-align: left;
+}
+
+@media (max-width: 768px) {
+    .minimalist-hero .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
+
+.minimalist-title {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    font-weight: 800;
+    margin-bottom: 20px;
+    background: none;
+    -webkit-text-fill-color: #ffffff;
+    color: #ffffff;
+    text-align: left;
+    letter-spacing: -1px;
+}
+
+@media (max-width: 768px) {
+    .minimalist-title {
+        text-align: center;
+        font-size: 2.5rem;
+    }
+}
+
+.hero-subtitle { font-size: 1.15rem; color: #cccccc; margin-bottom: 30px;
+    margin-left: -15px; text-align: left; line-height: 1.6; }
+
+@media (max-width: 768px) {
+    .hero-subtitle {
+        text-align: center;
+    }
+}
+
+.hero-description p { text-align: left; font-size: 1rem; color: #aaaaaa; line-height: 1.6; margin-bottom: 15px; }
+
+@media (max-width: 768px) {
+    .hero-description p {
+        text-align: center;
+    }
+}
+
+.bw-filter {
+    filter: grayscale(100%) contrast(1.1);
+}
+
+/* Minimalist Background Image Layout */
+.minimalist-hero {
+    border-bottom: 1px solid;
+    border-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent) 1;
+    position: relative;
+    padding: 120px 0 80px 0;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('amandahero.PNG');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 85% bottom;
+    filter: grayscale(100%);
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 45%, black 85%, transparent 100%);
+    mask-image: linear-gradient(90deg, transparent 0%, black 45%, black 85%, transparent 100%);
+    z-index: 1;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #0a0a0a 0%, #0a0a0a 45%, transparent 60%, transparent 85%, #0a0a0a 100%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.minimalist-hero .container {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+}
+
+.hero-text-content { max-width: 460px; }
+
+@media (max-width: 768px) {
+    .minimalist-hero {
+    border-bottom: 1px solid;
+    border-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent) 1;
+        align-items: flex-end;
+        padding-bottom: 40px;
+    }
+    .hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('amandahero.PNG');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 85% bottom;
+    filter: grayscale(100%);
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 45%, black 85%, transparent 100%);
+    mask-image: linear-gradient(90deg, transparent 0%, black 45%, black 85%, transparent 100%);
+    z-index: 1;
+}
+    .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #0a0a0a 0%, #0a0a0a 45%, transparent 60%, transparent 85%, #0a0a0a 100%);
+    z-index: 2;
+    pointer-events: none;
+}
+}
+
+/* Dark Minimalist Background Layout */
+body {
+    background-color: #0a0a0a !important;
+}
+
+body::before {
+    background: #0a0a0a !important;
+}
+
+.minimalist-hero {
+    border-bottom: 1px solid;
+    border-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent) 1;
+    position: relative;
+    padding: 120px 0 80px 0;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background-color: #0a0a0a;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('amandahero.PNG');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 85% bottom;
+    filter: grayscale(100%);
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 45%, black 85%, transparent 100%);
+    mask-image: linear-gradient(90deg, transparent 0%, black 45%, black 85%, transparent 100%);
+    z-index: 1;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #0a0a0a 0%, #0a0a0a 45%, transparent 60%, transparent 85%, #0a0a0a 100%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.minimalist-hero .container {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+}
+
+.hero-text-content { max-width: 460px; }
+
+.minimalist-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.5rem;
+    line-height: 1.1;
+    font-weight: 800;
+    margin-bottom: 20px;
+    background: none;
+    -webkit-text-fill-color: #ffffff;
+    color: #ffffff;
+    text-align: left;
+    letter-spacing: -1px;
+}
+
+.hero-subtitle { font-size: 1.15rem; color: #cccccc; margin-bottom: 30px;
+    margin-left: -15px; text-align: left; line-height: 1.6; }
+
+.hero-description p { text-align: left; font-size: 1rem; color: #aaaaaa; line-height: 1.6; margin-bottom: 15px; }
+
+@media (max-width: 768px) {
+    .minimalist-hero {
+    border-bottom: 1px solid;
+    border-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent) 1;
+        align-items: flex-end;
+        padding-bottom: 40px;
+    }
+    .hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('amandahero.PNG');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 85% bottom;
+    filter: grayscale(100%);
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 45%, black 85%, transparent 100%);
+    mask-image: linear-gradient(90deg, transparent 0%, black 45%, black 85%, transparent 100%);
+    z-index: 1;
+}
+    .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #0a0a0a 0%, #0a0a0a 45%, transparent 60%, transparent 85%, #0a0a0a 100%);
+    z-index: 2;
+    pointer-events: none;
+}
+    .minimalist-title {
+        text-align: center;
+        font-size: 2.5rem;
+    }
+    .hero-subtitle, .hero-description p {
+        text-align: center;
+    }
+}
+/* Animated Underline for Navbar Links */
+.nav-link {
+    position: relative;
+    text-decoration: none;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -4px;
+    left: 0;
+    background-color: #ffffff;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Chic Title Animation */
+.minimalist-title {
+    position: relative;
+    padding-bottom: 25px; /* space for the accent line */
+}
+
+.minimalist-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    width: 0;
+    background-color: #ffffff;
+    animation: drawAccentLine 1.2s cubic-bezier(0.77, 0, 0.175, 1) 0.8s forwards;
+}
+
+@keyframes drawAccentLine {
+    to {
+        width: 150px; /* Short, elegant editorial line */
+    }
+}
+
+/* Minimalist Chic Highlight Text */
+.hero-description p.highlight {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 500 !important; /* Medium/Semi-bold para leveza */
+    font-style: normal !important; /* Sem itálico para ficar bem clean */
+    font-size: 1.15rem !important;
+    letter-spacing: 1.5px !important; /* Espaçamento generoso entre as letras é o segredo do minimalismo chique */
+    color: #f0f0f0 !important;
+    margin-top: 25px !important;
+    border-left: 2px solid #ffffff; /* Uma linha lateral super fina e minimalista */
+    padding-left: 15px;
+}
+
+/* Hide Carousel Buttons */
+#carousel-btn-prev, #carousel-btn-next {
+    display: none !important;
+}
+
+/* Editorial Layout Refinements for Sections */
+.problem h2, .section-title {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 500 !important;
+    letter-spacing: 2px !important;
+    line-height: 1.4 !important;
+    color: #ffffff !important;
+    margin-bottom: 60px !important;
+}
+
+.content-grid {
+    text-align: left !important;
+    gap: 80px !important; /* Mais respiro entre as colunas */
+}
+
+.text-block p {
+    font-size: 1.1rem !important;
+    line-height: 1.8 !important; /* Mais respiro entre as linhas */
+    color: #999999 !important; /* Cinza sofisticado */
+    text-align: left !important; /* Alinhamento a esquerda  regra de revista */
+    margin-bottom: 25px !important;
+}
+
+.text-block p strong {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+}
+
+.callout {
+    background: rgba(255, 255, 255, 0.02) !important; /* Fundo hiper sutil */
+    border: none !important; /* Removemos aquela borda dura */
+    border-left: 2px solid #ffffff !important; /* Filete lateral chique */
+    padding: 40px 50px !important;
+    text-align: left !important;
+    border-radius: 0 !important; /* Cantos retos sao mais modernos */
+}
+
+.callout p {
+    font-size: 1.15rem !important;
+    line-height: 1.8 !important;
+    color: #cccccc !important;
+}
+
+/* Apply Editorial Styling Globally to Cards and Subheaders */
+.solution-grid {
+    text-align: left !important;
+    gap: 40px !important;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.02) !important;
+    border: none !important;
+    border-left: 2px solid #ffffff !important;
+    padding: 40px 50px !important;
+    text-align: left !important;
+    border-radius: 0 !important;
+}
+
+.card p {
+    font-size: 1.15rem !important;
+    line-height: 1.8 !important;
+    color: #999999 !important; /* Elegant gray */
+    text-align: left !important;
+}
+
+.card p strong {
+    color: #ffffff !important;
+}
+
+.large-text {
+    font-size: 1.25rem !important;
+    line-height: 1.7 !important;
+    color: #cccccc !important;
+    max-width: 800px !important;
+    margin: 0 auto 40px auto !important;
+}
+
+.highlight-text {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 500 !important;
+    letter-spacing: 2px !important;
+    text-transform: uppercase !important;
+    font-size: 1.4rem !important;
+    line-height: 1.5 !important;
+    color: #ffffff !important;
+    margin-top: 50px !important;
+    margin-bottom: 40px !important;
+}
+
+/* Ensure body background is absolute black to avoid that dark green/gray tint */
+body, html {
+    background-color: #0a0a0a !important;
+}
+
+/* Fix glued cards and enforce left alignment */
+.includes-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important;
+    gap: 30px !important; /* Espaço entre os cartoes */
+}
+
+.include-item, .include-item p, .include-item h4 {
+    text-align: left !important; /* Forcar o texto a ficar na esquerda */
+}
+
+.check-list, .check-list p {
+    text-align: left !important;
+}
+
+/* Fix padding so the left border is not touching the text */
+.glassmorphism, .include-item, .card, .check-list, .testimonials-cta-box {
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+    box-sizing: border-box !important;
+}
+
+/* Override glassmorphism for the Default Pricing Card and style it like the Highlight Card but in Dark Green */
+.price-card.default {
+    background: linear-gradient(145deg, rgba(15, 35, 22, 0.95), rgba(5, 15, 10, 0.98)) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 20px !important;
+    text-align: center !important;
+    padding: 40px !important;
+    transform: none !important; /* Prevent it from scaling like the highlight one if it was */
+}
+
+.price-card.default h3, .price-card.default .subtitle {
+    text-align: center !important;
+    color: #ffffff !important;
+    letter-spacing: 1px !important;
+}
+
+.price-card.default .price {
+    color: #ffffff !important;
+    text-align: center !important;
+}
+
+.price-card.default .price span {
+    color: #cccccc !important;
+}
+
+.price-card.default ul {
+    text-align: left !important;
+    margin: 0 auto !important;
+    display: inline-block !important;
+}
+
+.price-card.default ul li {
+    text-align: left !important;
+    color: #dddddd !important;
+}
+
+.price-card.default ul li::before {
+    color: #4CAF50 !important; /* Green checkmark instead of gold */
+}
+
+/* === GUARANTEE SECTION REDESIGN === */
+.guarantee-box {
+    background: transparent !important; /* Remove qualquer fundo */
+    border: none !important; /* Remove a linha branca da esquerda do glassmorphism */
+    box-shadow: none !important;
+    padding: 40px 0 !important;
+}
+
+.guarantee-badge-glow {
+    display: none !important; /* Remove o quadrado verde escuro borrado que criava as 'bordas' duras */
+}
+
+.guarantee-seal-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.guarantee-info-col {
+    text-align: left !important;
+}
+
+.guarantee-info-col h2 {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 500 !important;
+    letter-spacing: 2px !important;
+    color: #ffffff !important;
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
+    font-size: 1.6rem !important;
+}
+
+.guarantee-info-col p {
+    color: #999999 !important;
+    line-height: 1.8 !important;
+    margin-bottom: 20px !important;
+}
+
+.guarantee-pill {
+    background: transparent !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    color: #ffffff !important;
+    letter-spacing: 2px !important;
+    font-size: 0.8rem !important;
+    padding: 8px 16px !important;
+    border-radius: 50px !important;
+}
+
+.guarantee-quote {
+    font-style: italic !important;
+    font-family: 'Playfair Display', serif !important;
+    color: #e0e0e0 !important;
+    font-size: 1.25rem !important;
+    margin-top: 35px !important;
+    border-left: 2px solid #ffffff !important;
+    padding-left: 20px !important;
+}
+
+/* Hero Logo Styling */
+.hero-logo {
+    max-width: 100%;
+    width: 550px; /* Adjust as needed */
+    height: auto;
+    margin-bottom: 30px;
+    margin-left: -15px;
+    display: block;
 }
