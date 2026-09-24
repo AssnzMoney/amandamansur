@@ -2468,3 +2468,25 @@ p, li, .hero-description p {
     font-size: 0.98rem !important; 
     line-height: 1.7 !important;
 }
+
+/* =========================================
+   FIX GUARANTEE ALIGNMENT (DESKTOP)
+   ========================================= */
+@media (min-width: 769px) {
+    .guarantee-info-col,
+    .guarantee-info-col h2,
+    .guarantee-info-col p,
+    .guarantee-quote {
+        text-align: left !important; /* Fora TUDO a ficar alinhado perfeitamente na esquerda no PC */
+    }
+    
+    .guarantee-pill {
+        display: inline-block !important;
+        margin: 0 0 20px 0 !important;
+    }
+    
+    .guarantee-quote {
+        border-left: 2px solid #ffffff !important;
+        padding-left: 20px !important;
+    }
+}
