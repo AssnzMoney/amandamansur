@@ -2341,3 +2341,45 @@ body, html {
     margin-left: -15px;
     display: block;
 }
+
+/* =========================================
+   MOBILE FIXES FOR HERO SECTION
+   ========================================= */
+@media (max-width: 768px) {
+    .minimalist-hero {
+        padding: 60px 15px 40px 15px !important; /* Remove o buraco preto gigante no topo */
+        min-height: 100vh !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    .hero-background {
+        background-size: cover !important; /* Preenche a tela toda no celular */
+        background-position: center top !important; /* Foca no rosto dela */
+        mask-image: none !important; /* Remove as mscaras horizontais que cortavam a foto */
+        -webkit-mask-image: none !important;
+        opacity: 0.35 !important; /* Deixa a foto como marca d'gua de fundo para nao atrapalhar leitura */
+    }
+
+    .hero-overlay {
+        background: linear-gradient(0deg, #0a0a0a 0%, rgba(10,10,10,0.7) 40%, rgba(10,10,10,0.4) 100%) !important; /* Gradiente de baixo pra cima */
+    }
+
+    .hero-logo {
+        width: 90% !important; /* Usa 90% da tela */
+        max-width: 400px !important;
+        margin: 0 auto 30px auto !important; /* Centraliza perfeitamente e tira a margem negativa */
+        display: block !important;
+    }
+
+    .hero-text-content, .hero-subtitle, .hero-description p {
+        text-align: center !important; /* Tudo centralizado no mobile */
+        margin-left: 0 !important;
+    }
+
+    .hero-description p.highlight {
+        border-left: none !important; /* Tira a barra lateral fina que no combina centralizada */
+        padding-left: 0 !important;
+        display: inline-block !important;
+    }
+}
